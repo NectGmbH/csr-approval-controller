@@ -1,0 +1,41 @@
+# Fixes:
+#   vendor/k8s.io/kubernetes/pkg/util/parsers/parsers.go:36:16: undefined: reference.ParseNormalizedNamed
+[[override]]
+  name = "github.com/docker/distribution"
+  branch = "master"
+
+[[override]]
+  name = "k8s.io/api"
+  version = "kubernetes-1.11.3"
+
+[[override]]
+  name = "k8s.io/apimachinery"
+  version = "kubernetes-1.11.3"
+
+[[override]]
+  name = "k8s.io/apiserver"
+  version = "kubernetes-1.11.3"
+
+[[override]]
+  name = "k8s.io/apiextensions-apiserver"
+  version = "kubernetes-1.11.3"
+
+[[override]]
+  name = "k8s.io/client-go"
+  version = "kubernetes-1.11.3"
+
+[[override]]
+  name = "k8s.io/kube-openapi"
+  revision = "91cfa479c814065e420cee7ed227db0f63a5854e" # version specified in 1.11.3
+
+[[override]]
+  name = "k8s.io/kubernetes"
+  version = "1.11.3"
+
+[[constraint]]
+  branch = "master"
+  name = "github.com/golang/glog"
+
+[prune]
+  go-tests = true
+  unused-packages = true

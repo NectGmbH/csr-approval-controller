@@ -1,0 +1,3 @@
+name: csr-approval-controller
+description: generic controller which approves csrs matching a specific pattern
+version: 0.1.0

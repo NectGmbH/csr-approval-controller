@@ -1,0 +1,37 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: csr-approval-controller
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: csr-approval-controller
+  template:
+    metadata:
+      labels:
+        name: csr-approval-controller
+    spec:
+      serviceAccountName: "csrctrl-{{ .Release.Name }}"
+      containers:
+      - name: csr-approval-controller
+        image: '{{ .Values.csrApprovalController.image }}'
+        imagePullPolicy: Always
+        args:
+        - '-cn'
+        - '{{ .Values.csrApprovalController.cn }}'
+        - '-org'
+        - '{{ .Values.csrApprovalController.org }}'
+        - '-dns'
+        - '{{ .Values.csrApprovalController.dns }}'
+        - '-email'
+        - '{{ .Values.csrApprovalController.email }}'
+        - '-ip'
+        - '{{ .Values.csrApprovalController.ip }}'
+        - '-groups'
+        - '{{ .Values.csrApprovalController.groups }}'
+        - '-username'
+        - '{{ .Values.csrApprovalController.username }}'
+        - '-v'
+        - '4'
+        - '-logtostderr'

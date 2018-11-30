@@ -1,0 +1,9 @@
+csrApprovalController:
+  image: 'kavatech/csr-approval-controller:v1.0.0'
+  cn: ''
+  org: ''
+  dns: ''
+  email: ''
+  ip: ''
+  groups: ''
+  username: ''
