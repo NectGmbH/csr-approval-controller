@@ -20,6 +20,15 @@ rules:
   - create
   - get
   - watch
+- apiGroups:
+  - certificates.k8s.io
+  resources:
+  - signers
+  resourceNames:
+  - kubernetes.io/legacy-unknown
+  - kubernetes.io/kube-apiserver-client
+  verbs:
+  - approve
 ---
 apiVersion: rbac.authorization.k8s.io/v1beta1
 kind: ClusterRoleBinding
